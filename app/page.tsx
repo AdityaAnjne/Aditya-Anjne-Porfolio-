@@ -32,7 +32,7 @@ const projects: Project[] = [
     github: "https://github.com/AdityaAnjne/GreenLoop",
     media: [
       "/projects/GreenLoop/FarmerDashboard.png",
-      "/projects/GreenLoop/CustomerDasboard.png",
+      "/projects/GreenLoop/CustomerDashboard.png",
       "/projects/GreenLoop/RetailerDasboard.png",
       "/projects/GreenLoop/DistributorDashboard.png",
     ],
