@@ -114,9 +114,11 @@ export default function ProjectModal({ project, onClose }: Props) {
               </svg>
             </button>
 
-            <div className="project-modal__media">
-              <Carousel media={project.media} projectNum={project.num} />
-            </div>
+            {project.media && project.media.length > 0 && (
+              <div className="project-modal__media">
+                <Carousel media={project.media} projectNum={project.num} />
+              </div>
+            )}
 
             <div className="project-modal__body">
               <p className="font-mono text-xs text-ice-400 uppercase tracking-[0.25em] mb-2">
