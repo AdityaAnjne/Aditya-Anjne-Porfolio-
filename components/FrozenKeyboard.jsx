@@ -536,9 +536,9 @@ function Keyboard({ mobile }) {
             left of the tilted keyboard, with its own matching isometric yaw +
             a small roll so the baseline rises from left to right. */}
       {!mobile && activeSection === "stack" && hoveredIcon && (<Suspense fallback={null}>
-          <group 
+          <group
         //position={[-2.6, -0.5, 0.9]}
-        position={[-1.7, 0, 1.5]} 
+        position={[-1.7, 0, 1.5]}
         //rotation={[-0.8, Math.PI * -0.1  , Math.PI * 4.33]}
         rotation={[-1, 0.2, 1.03]}>
             {/* No <Center>: Text3D renders with its first letter anchored
@@ -558,7 +558,7 @@ function Keyboard({ mobile }) {
     </>);
 }
 export default function FrozenKeyboard({ mobile = false, }) {
-    return (<Canvas 
+    return (<Canvas
     // Portrait gets a pulled-back, centered, less top-down camera so the
     // keyboard reads as a front-facing hero centerpiece instead of the
     // off-axis desktop composition.
