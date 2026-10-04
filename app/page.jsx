@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import FrozenKeyboard from "@/components/FrozenKeyboard";
 import SmoothScroll from "@/components/smooth-scroll";
@@ -119,12 +120,26 @@ export default function Home() {
           </section>
 
           <section data-kb-section="about" className="relative py-24 md:min-h-screen flex items-center p-6 sm:p-10 md:p-14 overflow-hidden">
-            <div className="max-w-2xl relative">
-              <Reveal><p className="font-mono text-sm text-ice-400 mb-3">{t("about.kicker")}</p></Reveal>
-              <Reveal delay={80}><h2 className="text-4xl sm:text-6xl font-semibold tracking-tight text-ice-50 leading-[1.05] mb-8">{t("about.title")}</h2></Reveal>
-              <Reveal delay={160}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body1")}</p></Reveal>
-              <Reveal delay={240}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body2")}</p></Reveal>
-              <Reveal delay={320}><p className="text-base sm:text-lg text-ice-200 leading-relaxed">{t("about.body3")}</p></Reveal>
+            <div className="relative grid w-full max-w-6xl items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(240px,320px)] lg:gap-16">
+              <div className="max-w-2xl">
+                <Reveal><p className="font-mono text-sm text-ice-400 mb-3">{t("about.kicker")}</p></Reveal>
+                <Reveal delay={80}><h2 className="text-4xl sm:text-6xl font-semibold tracking-tight text-ice-50 leading-[1.05] mb-8">{t("about.title")}</h2></Reveal>
+                <Reveal delay={160}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body1")}</p></Reveal>
+                <Reveal delay={240}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body2")}</p></Reveal>
+                <Reveal delay={320}><p className="text-base sm:text-lg text-ice-200 leading-relaxed">{t("about.body3")}</p></Reveal>
+              </div>
+              <Reveal delay={220} className="mx-auto w-full max-w-[293px] md:max-w-none">
+                <div className="overflow-hidden rounded-3xl border border-ice-700/50 bg-ink-1/70 shadow-2xl">
+                  <Image
+                    src="/images/aditya-anjne.jpeg"
+                    alt="Portrait of Aditya Anjne"
+                    width={293}
+                    height={512}
+                    sizes="(min-width: 768px) 320px, 293px"
+                    className="h-auto w-full object-cover object-center"
+                  />
+                </div>
+              </Reveal>
             </div>
           </section>
 
