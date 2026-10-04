@@ -1,8 +1,8 @@
-# 3D Developer Portfolio
+# Aditya Anjne — Developer Portfolio
 
-An immersive, interactive developer portfolio built with **Next.js 16**, **React Three Fiber**, and **Tailwind CSS v4**. Features a 3D mechanical keyboard hero scene, seasonal themes, smooth scroll animations, bilingual support (ES/EN), and a fully responsive design.
+An immersive developer portfolio built with **Next.js 16**, **React Three Fiber**, and **Tailwind CSS v4**. It features a 3D mechanical keyboard, seasonal themes, smooth scrolling, project galleries, and a responsive layout.
 
-**[Live Demo](https://adityaanjne.com)** &nbsp;|&nbsp; **Built by [Aditya Anjne](https://linkedin.com/in/aditya-anjne-43802b304)**
+Built by [Aditya Anjne](https://linkedin.com/in/aditya-anjne-43802b304).
 
 ---
 
@@ -11,7 +11,7 @@ An immersive, interactive developer portfolio built with **Next.js 16**, **React
 - **Interactive 3D Keyboard** — A full mechanical keyboard rendered with React Three Fiber and Three.js. Keys react to real keypresses with physics-based animations and sound effects.
 - **Seasonal Themes** — Four complete visual themes (Winter, Spring, Summer, Autumn) that re-skin the entire UI — colours, gradients, and 3D scene lighting — with a single click.
 - **Project Showcases** — Modal dialogs with image carousels, tech stack chips, and links to live demos and source code.
-- **Bilingual (ES/EN)** — Lightweight custom i18n layer with zero external dependencies. Language toggle persists across sections.
+- **English interface** — Portfolio content and project details are presented in English.
 - **Smooth Scroll & Reveal Animations** — Powered by [Lenis](https://github.com/darkroomengineering/lenis) for buttery smooth scrolling with intersection-observer-based reveal effects.
 - **Custom Cursor & Magnetic Targets** — A custom cursor that morphs on interactive elements, with magnetic snap behaviour on buttons.
 - **Responsive & Mobile-First** — Optimised for recruiters reviewing on phones. WebGL performance and touch interactions are first-class concerns.
@@ -41,7 +41,7 @@ An immersive, interactive developer portfolio built with **Next.js 16**, **React
 ```bash
 # Clone the repository
 git clone https://github.com/AdityaAnjne/Aditya-Anjne-Porfolio-.git
-cd 3d-portfolio
+cd Aditya-Anjne-Porfolio-
 
 # Install dependencies
 npm install
@@ -92,7 +92,7 @@ docker run -p 3000:3000 3d-portfolio
 │   ├── CopyEmail.tsx      # Copy-to-clipboard button
 │   └── smooth-scroll.tsx  # Lenis smooth scroll wrapper
 ├── lib/
-│   ├── i18n.ts            # Bilingual dictionary (ES/EN)
+│   ├── i18n.ts            # English UI copy
 │   └── seasons.ts         # Season theme definitions
 ├── public/
 │   ├── fonts/             # 3D text typefaces
@@ -112,15 +112,15 @@ Projects are defined in `app/page.tsx` in the `projects` array. Each entry suppo
 ```typescript
 {
   num: "05",
-  name: { es: "Mi Proyecto", en: "My Project" },
+  name: "My Project",
   stack: ["Next.js", "TypeScript"],
-  desc: { es: "Descripción corta", en: "Short description" },
-  details: { es: "Descripción larga...", en: "Long description..." },
+  desc: "A short project summary.",
+  details: "A longer description of the project.",
   url: "https://myproject.com",          // optional — adds "View Site" button
   github: "https://github.com/user/repo", // optional — adds "View Code" button
   media: ["/projects/my-project/1.png"], // optional — carousel screenshots
   highlights: ["nextdotjs", "typescript"], // simple-icons slugs for 3D keyboard
-  badge: { es: "En desarrollo", en: "In progress" }, // optional status badge
+  badge: "In progress",                  // optional status badge
   align: "left",                         // card alignment
   section: "project5",                   // data attribute for scroll nav
 }
@@ -130,9 +130,9 @@ Projects are defined in `app/page.tsx` in the `projects` array. Each entry suppo
 
 Seasonal colour tokens are defined as CSS custom properties in `app/globals.css` under `[data-season="..."]` selectors. Edit or add new seasons there.
 
-### Translations
+### UI copy
 
-All UI strings live in `lib/i18n.ts` as a flat dictionary with `{ es, en }` leaves. Add new keys or languages by extending the structure.
+User-facing English strings live in `lib/i18n.ts` as a flat key-to-string dictionary.
 
 ## Deployment
 
@@ -156,13 +156,9 @@ docker run -p 3000:3000 3d-portfolio
 - **Font optimisation** — Uses `next/font` for zero-layout-shift web fonts.
 - **Turbopack** — Sub-300ms dev server cold starts.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## Author
 
-**Jose Maria Albero Belamendia (Txema)**
+**Aditya Anjne**
 
 - [LinkedIn](https://linkedin.com/in/aditya-anjne-43802b304)
 - [GitHub](https://github.com/AdityaAnjne)
