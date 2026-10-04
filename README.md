@@ -2,7 +2,7 @@
 
 An immersive, interactive developer portfolio built with **Next.js 16**, **React Three Fiber**, and **Tailwind CSS v4**. Features a 3D mechanical keyboard hero scene, seasonal themes, smooth scroll animations, bilingual support (ES/EN), and a fully responsive design.
 
-**[Live Demo](https://txemaalbero.com)** &nbsp;|&nbsp; **Built by [Txema Albero](https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246)**
+**[Live Demo](https://adityaanjne.com)** &nbsp;|&nbsp; **Built by [Aditya Anjne](https://linkedin.com/in/aditya-anjne-43802b304)**
 
 ---
 
@@ -40,7 +40,7 @@ An immersive, interactive developer portfolio built with **Next.js 16**, **React
 
 ```bash
 # Clone the repository
-git clone https://github.com/Txemalon/3d-portfolio.git
+git clone https://github.com/AdityaAnjne/Aditya-Anjne-Porfolio-.git
 cd 3d-portfolio
 
 # Install dependencies
@@ -138,7 +138,7 @@ All UI strings live in `lib/i18n.ts` as a flat dictionary with `{ es, en }` leav
 
 ### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Txemalon/3d-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/AdityaAnjne/Aditya-Anjne-Porfolio-)
 
 ### Docker / Self-Hosted
 
