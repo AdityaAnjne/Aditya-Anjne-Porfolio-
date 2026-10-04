@@ -18,8 +18,8 @@ const projects = [
         num: "01",
         name: "GreenLoop",
         stack: ["React", "Spring Boot", "Spring Security (JWT)", "JPA / Hibernate", "MySQL", "Gemini API", "Cloudinary"],
-        desc: "A role-based agricultural marketplace connecting farmers, distributors, retailers, and customers through secure workflows.",
-        details: "GreenLoop is a full-stack agricultural marketplace built around role-based access. It supports product and order management, secure transactions, RESTful APIs, AI-powered crop recommendations through the Gemini API, and cloud-based image handling with Cloudinary.",
+        desc: "A farm-to-customer marketplace connecting farmers, retailers, distributors, and customers. It makes product ownership, order handoffs, and delivery progress visible through role-specific workflows.",
+        details: "GreenLoop is a full-stack agricultural marketplace designed to make produce sourcing traceable and order fulfillment coordinated. Farmers create product listings and choose which retailer can sell each product. When a customer places an order, that retailer confirms it and assigns a distributor; the order then moves through packed, shipped, and delivered stages. Backend authorization ensures each farmer, retailer, and distributor can only view or update records connected to their role and assigned relationships. Products include Cloudinary-hosted images and QR codes that link to public product details. Gemini-powered features support crop recommendations and produce quality checks. I built the application with a React frontend and Spring Boot REST APIs, using Spring Security with JWT, JPA/Hibernate, and MySQL.",
         url: "https://green-loop-zeta.vercel.app",
         github: "https://github.com/AdityaAnjne/GreenLoop",
         media: [
@@ -36,8 +36,8 @@ const projects = [
         num: "02",
         name: "My Quiz App",
         stack: ["HTML", "CSS", "JavaScript", "Gemini API", "Prompt Engineering"],
-        desc: "An AI-powered platform that creates personalised multiple-choice quizzes from a topic, difficulty level, and preferred language.",
-        details: "My Quiz App generates multiple-choice questions with Gemini API based on the learner’s topic, difficulty level, and language preference. It includes real-time answer validation, AI-generated explanations, performance tracking, and an analytics dashboard in a responsive interface.",
+        desc: "A browser-based quiz generator that uses Gemini to create multiple-choice questions from a topic, difficulty, question count, and language selected by the learner.",
+        details: "My Quiz App turns a learner’s topic into a ready-to-take multiple-choice quiz using the Gemini 2.5 Flash API. Learners can choose how many questions to generate, set the difficulty, and select English, Hindi, or Hinglish. During a quiz, answers receive clear, color-coded feedback with AI-generated explanations. A results view summarizes the score and performance at the end. I built the responsive interface with vanilla HTML, CSS, and JavaScript, connecting the quiz flow to Gemini through carefully structured prompts.",
         url: "https://my-quiz-app-drab.vercel.app",
         github: "https://github.com/AdityaAnjne/My-Quiz-App",
         media: [
@@ -54,8 +54,8 @@ const projects = [
         num: "03",
         name: "Student Management System",
         stack: ["Java", "Spring Boot", "Spring Data JPA", "MySQL", "REST API", "JUnit 5"],
-        desc: "A production-ready REST API for managing student records, built with Spring Boot, JPA, and MySQL.",
-        details: "A full-featured student management REST API with CRUD operations, search and course filters, input validation, consistent error responses, and tested service methods. The project modernises a Java and JDBC console application into a Spring Boot backend using Spring Data JPA and MySQL.",
+        desc: "A Spring Boot REST API for creating, searching, filtering, updating, and deleting student records with MySQL persistence.",
+        details: "This project modernizes a Java and JDBC student-records console application into a layered Spring Boot REST API. Clients can create, retrieve, update, and delete records, search by student name, and filter by course. Spring Data JPA and Hibernate manage persistence in MySQL, while request and response DTOs keep the API contract separate from database entities. Validation, custom not-found and email errors, and a global exception handler provide consistent responses when requests fail. JUnit 5 and Mockito tests cover the service layer, including successful operations and missing-record cases.",
         github: "https://github.com/AdityaAnjne/Student-Management-Spring-Boot-Project",
         highlights: ["openjdk", "spring", "hibernate", "mysql"],
         align: "left",
@@ -116,6 +116,16 @@ export default function Home() {
                 {SKILLS_FLAT.map((s) => <div key={s.slug} className="flex items-start gap-3 rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4 text-left"><svg viewBox="0 0 24 24" width="22" height="22" fill={`#${s.hex}`} className="flex-none mt-0.5" aria-hidden><path d={s.path}/></svg><div><p className="text-ice-50 font-medium text-sm">{s.title}</p><p className="text-ice-400 text-xs mt-0.5 leading-snug">{t(`keyboard.taglines.${s.slug}`)}</p></div></div>)}
               </div>}
             </div></div>
+          </section>
+
+          <section data-kb-section="about" className="relative py-24 md:min-h-screen flex items-center p-6 sm:p-10 md:p-14 overflow-hidden">
+            <div className="max-w-2xl relative">
+              <Reveal><p className="font-mono text-sm text-ice-400 mb-3">{t("about.kicker")}</p></Reveal>
+              <Reveal delay={80}><h2 className="text-4xl sm:text-6xl font-semibold tracking-tight text-ice-50 leading-[1.05] mb-8">{t("about.title")}</h2></Reveal>
+              <Reveal delay={160}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body1")}</p></Reveal>
+              <Reveal delay={240}><p className="text-base sm:text-lg text-ice-200 leading-relaxed mb-5">{t("about.body2")}</p></Reveal>
+              <Reveal delay={320}><p className="text-base sm:text-lg text-ice-200 leading-relaxed">{t("about.body3")}</p></Reveal>
+            </div>
           </section>
 
           {projects.map((project) => <section key={project.num} data-kb-section={project.section} data-kb-highlights={(project.highlights ?? []).join(",")} className="relative py-20 md:min-h-screen flex items-center p-6 sm:p-10 md:p-14 overflow-hidden">

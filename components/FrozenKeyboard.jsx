@@ -27,6 +27,15 @@ const SECTION_STATES = {
         posZ: 0,
         scale: 1.3,
     },
+    about: {
+        yaw: Math.PI * 0.25,
+        pitch: Math.PI * 0.16,
+        roll: Math.PI * 0.02,
+        posX: 1.4,
+        posY: -0.1,
+        posZ: 0,
+        scale: 1,
+    },
     // Project 1 — text is left-aligned, so the keyboard slides to the RIGHT,
     // near the giant "01" watermark.
     project1: {

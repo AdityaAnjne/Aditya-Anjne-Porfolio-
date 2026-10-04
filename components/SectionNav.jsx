@@ -12,6 +12,7 @@ export default function SectionNav() {
     const SECTIONS = [
         { id: "hero", label: t("nav.home") },
         { id: "stack", label: t("nav.stack") },
+        { id: "about", label: t("nav.about") },
         { id: "project1", label: `${t("nav.project")} 01` },
         { id: "project2", label: `${t("nav.project")} 02` },
         { id: "project3", label: `${t("nav.project")} 03` },
@@ -21,6 +22,7 @@ export default function SectionNav() {
         const ids = [
             "hero",
             "stack",
+            "about",
             "project1",
             "project2",
             "project3",
