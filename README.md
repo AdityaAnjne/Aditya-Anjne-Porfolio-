@@ -26,7 +26,7 @@ Built by [Aditya Anjne](https://linkedin.com/in/aditya-anjne-43802b304).
 | Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
 | Scroll | [Lenis](https://github.com/darkroomengineering/lenis) |
 | Icons | [Simple Icons](https://simpleicons.org/) (tech logos on 3D keycaps) |
-| Language | TypeScript |
+| Language | JavaScript |
 | Deploy | Vercel / Docker |
 
 ## Getting Started
@@ -73,33 +73,32 @@ docker run -p 3000:3000 3d-portfolio
 ```
 ├── app/
 │   ├── globals.css        # Tailwind + CSS custom properties (seasonal themes)
-│   ├── layout.tsx         # Root layout with providers
-│   └── page.tsx           # Home page with all sections
+│   ├── layout.jsx         # Root layout with providers
+│   └── page.jsx           # Home page with all sections
 ├── components/
-│   ├── FrozenKeyboard.tsx # 3D keyboard scene (R3F)
-│   ├── FrozenBackground.tsx # Animated background particles
-│   ├── Carousel.tsx       # Image carousel for project modals
-│   ├── ProjectModal.tsx   # Fullscreen project detail dialog
-│   ├── SeasonProvider.tsx # Seasonal theme context
-│   ├── SeasonPicker.tsx   # Theme switcher UI
-│   ├── LanguageProvider.tsx # i18n context
-│   ├── LanguagePicker.tsx # Language toggle
-│   ├── CustomCursor.tsx   # Custom cursor with hover states
-│   ├── MagneticTargets.tsx# Magnetic snap on interactive elements
-│   ├── Reveal.tsx         # Scroll-triggered reveal animations
-│   ├── SectionNav.tsx     # Dot navigation sidebar
-│   ├── ScrollProgress.tsx # Scroll progress indicator
-│   ├── CopyEmail.tsx      # Copy-to-clipboard button
-│   └── smooth-scroll.tsx  # Lenis smooth scroll wrapper
+│   ├── FrozenKeyboard.jsx # 3D keyboard scene (R3F)
+│   ├── FrozenBackground.jsx # Animated background particles
+│   ├── Carousel.jsx       # Image carousel for project modals
+│   ├── ProjectModal.jsx   # Fullscreen project detail dialog
+│   ├── SeasonProvider.jsx # Seasonal theme context
+│   ├── SeasonPicker.jsx   # Theme switcher UI
+│   ├── LanguageProvider.jsx # English UI copy context
+│   ├── CustomCursor.jsx   # Custom cursor with hover states
+│   ├── MagneticTargets.jsx# Magnetic snap on interactive elements
+│   ├── Reveal.jsx         # Scroll-triggered reveal animations
+│   ├── SectionNav.jsx     # Dot navigation sidebar
+│   ├── ScrollProgress.jsx # Scroll progress indicator
+│   ├── CopyEmail.jsx      # Copy-to-clipboard button
+│   └── smooth-scroll.jsx  # Lenis smooth scroll wrapper
 ├── lib/
-│   ├── i18n.ts            # English UI copy
-│   └── seasons.ts         # Season theme definitions
+│   ├── i18n.js            # English UI copy
+│   ├── seasons.js         # Season theme definitions
 ├── public/
 │   ├── fonts/             # 3D text typefaces
 │   ├── projects/          # Project screenshots
 │   └── sounds/            # Keyboard sound effects
 ├── Dockerfile             # Multi-stage production build
-├── next.config.ts         # Standalone output + security headers
+├── next.config.mjs        # Standalone output + security headers
 └── package.json
 ```
 
@@ -107,19 +106,19 @@ docker run -p 3000:3000 3d-portfolio
 
 ### Adding a Project
 
-Projects are defined in `app/page.tsx` in the `projects` array. Each entry supports:
+Projects are defined in `app/page.jsx` in the `projects` array. Each entry supports:
 
-```typescript
+```javascript
 {
   num: "05",
   name: "My Project",
-  stack: ["Next.js", "TypeScript"],
+  stack: ["Next.js", "JavaScript"],
   desc: "A short project summary.",
   details: "A longer description of the project.",
   url: "https://myproject.com",          // optional — adds "View Site" button
   github: "https://github.com/user/repo", // optional — adds "View Code" button
   media: ["/projects/my-project/1.png"], // optional — carousel screenshots
-  highlights: ["nextdotjs", "typescript"], // simple-icons slugs for 3D keyboard
+  highlights: ["nextdotjs", "javascript"], // simple-icons slugs for 3D keyboard
   badge: "In progress",                  // optional status badge
   align: "left",                         // card alignment
   section: "project5",                   // data attribute for scroll nav
@@ -132,7 +131,7 @@ Seasonal colour tokens are defined as CSS custom properties in `app/globals.css`
 
 ### UI copy
 
-User-facing English strings live in `lib/i18n.ts` as a flat key-to-string dictionary.
+User-facing English strings live in `lib/i18n.js` as a flat key-to-string dictionary.
 
 ## Deployment
 

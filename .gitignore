@@ -36,10 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
 # AI tooling & local work notes — never commit
 .claude/
 .agents/
