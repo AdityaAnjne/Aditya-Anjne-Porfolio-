@@ -164,6 +164,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Jose Maria Albero Belamendia (Txema)**
 
-- [LinkedIn](https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246)
-- [GitHub](https://github.com/Txemalon)
-- [X / Twitter](https://x.com/Txemalon)
+- [LinkedIn](https://linkedin.com/in/aditya-anjne-43802b304)
+- [GitHub](https://github.com/AdityaAnjne)
