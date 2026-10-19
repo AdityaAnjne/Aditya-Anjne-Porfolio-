@@ -114,7 +114,7 @@ export default function Home() {
               <Reveal><h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">{t("stack.title")}</h2></Reveal>
               <Reveal delay={120}><p className="mt-3 text-sm sm:text-base text-ice-300">{isMobile ? t("stack.hintMobile") : t("stack.hint")}</p></Reveal>
               {isMobile && <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto pointer-events-auto">
-                {SKILLS_FLAT.map((s) => <div key={s.slug} className="flex items-start gap-3 rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4 text-left">{s.image ? <img src={s.image} alt="" width="22" height="22" className="flex-none mt-0.5 object-contain"/> : <svg viewBox="0 0 24 24" width="22" height="22" fill={`#${s.hex}`} className="flex-none mt-0.5" aria-hidden><path d={s.path}/></svg>}<div><p className="text-ice-50 font-medium text-sm">{s.title}</p><p className="text-ice-400 text-xs mt-0.5 leading-snug">{t(`keyboard.taglines.${s.slug}`)}</p></div></div>)}
+                {SKILLS_FLAT.map((s) => <div key={s.slug} className="flex items-start gap-3 rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4 text-left"><svg viewBox="0 0 24 24" width="22" height="22" fill={`#${s.hex}`} className="flex-none mt-0.5" aria-hidden><path d={s.path}/></svg><div><p className="text-ice-50 font-medium text-sm">{s.title}</p><p className="text-ice-400 text-xs mt-0.5 leading-snug">{t(`keyboard.taglines.${s.slug}`)}</p></div></div>)}
               </div>}
             </div></div>
           </section>
