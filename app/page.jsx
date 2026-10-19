@@ -10,7 +10,7 @@ import SeasonPicker from "@/components/SeasonPicker";
 import ProjectModal from "@/components/ProjectModal";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useIsMobile } from "@/lib/useIsMobile";
-import { SKILLS_FLAT } from "@/lib/skills";
+import { SKILL_GROUPS } from "@/lib/skills";
 const EMAIL = "adityaanjne2004@gmail.com";
 const GITHUB = "https://github.com/AdityaAnjne";
 const LINKEDIN = "https://linkedin.com/in/aditya-anjne-43802b304";
@@ -29,7 +29,7 @@ const projects = [
             "/projects/GreenLoop/RetailerDasboard.png",
             "/projects/GreenLoop/DistributorDashboard.png",
         ],
-        highlights: ["react", "spring", "hibernate", "mysql", "googlegemini"],
+        highlights: ["springboot", "hibernate", "mysql", "geminiapi"],
         align: "left",
         section: "project1",
     },
@@ -47,7 +47,7 @@ const projects = [
             "/projects/My-Quiz-App/WrongAnswer.png",
             "/projects/My-Quiz-App/Result.png",
         ],
-        highlights: ["javascript", "html5", "css", "googlegemini"],
+        highlights: ["javascript", "html5", "css", "geminiapi"],
         align: "right",
         section: "project2",
     },
@@ -58,7 +58,7 @@ const projects = [
         desc: "A Spring Boot REST API for creating, searching, filtering, updating, and deleting student records with MySQL persistence.",
         details: "This project modernizes a Java and JDBC student-records console application into a layered Spring Boot REST API. Clients can create, retrieve, update, and delete records, search by student name, and filter by course. Spring Data JPA and Hibernate manage persistence in MySQL, while request and response DTOs keep the API contract separate from database entities. Validation, custom not-found and email errors, and a global exception handler provide consistent responses when requests fail. JUnit 5 and Mockito tests cover the service layer, including successful operations and missing-record cases.",
         github: "https://github.com/AdityaAnjne/Student-Management-Spring-Boot-Project",
-        highlights: ["openjdk", "spring", "hibernate", "mysql"],
+        highlights: ["java", "springboot", "hibernate", "mysql"],
         align: "left",
         section: "project3",
     },
@@ -113,9 +113,12 @@ export default function Home() {
             <div className="relative md:h-[90vh]"><div className="md:sticky md:top-28 text-center">
               <Reveal><h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">{t("stack.title")}</h2></Reveal>
               <Reveal delay={120}><p className="mt-3 text-sm sm:text-base text-ice-300">{isMobile ? t("stack.hintMobile") : t("stack.hint")}</p></Reveal>
-              {isMobile && <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto pointer-events-auto">
-                {SKILLS_FLAT.map((s) => <div key={s.slug} className="flex items-start gap-3 rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4 text-left"><svg viewBox="0 0 24 24" width="22" height="22" fill={`#${s.hex}`} className="flex-none mt-0.5" aria-hidden><path d={s.path}/></svg><div><p className="text-ice-50 font-medium text-sm">{s.title}</p><p className="text-ice-400 text-xs mt-0.5 leading-snug">{t(`keyboard.taglines.${s.slug}`)}</p></div></div>)}
-              </div>}
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-6xl mx-auto pointer-events-auto text-left">
+                {SKILL_GROUPS.map((group) => <article key={group.title} className="rounded-xl bg-ink-1/75 backdrop-blur-sm border border-ink-3 p-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-ice-300 mb-3">{group.title}</h3>
+                  <div className="flex flex-wrap gap-2">{group.skills.map((skill) => <span key={skill} className="frost-chip">{skill}</span>)}</div>
+                </article>)}
+              </div>
             </div></div>
           </section>
 
