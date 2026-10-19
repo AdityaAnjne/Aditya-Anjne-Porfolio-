@@ -207,14 +207,14 @@ function makeIconTexture(svgPath, color, size = 256) {
 }
 const SKILLS = SKILLS_GRID;
 const COLS = 5;
-const ROWS = SKILLS_GRID.length;
+const ROWS = 3;
 const KEYCAP_SIZE = 0.4;
 const KEYCAP_HEIGHT = 0.28;
 const KEYCAP_TOP_SCALE = 0.78;
 const COL_SPACING = 0.42;
 const ROW_SPACING = 0.42;
 const BASE_WIDTH = 2.4;
-const BASE_DEPTH = 2.65;
+const BASE_DEPTH = 1.4;
 const BASE_HEIGHT = 0.26;
 const ICON_PLANE_SIZE = KEYCAP_SIZE * KEYCAP_TOP_SCALE * 0.78;
 const PRESS_DEPTH = 0.15;
@@ -522,7 +522,6 @@ function Keyboard({ mobile }) {
             const z = (row - (ROWS - 1) / 2) * ROW_SPACING;
             const id = `${row}-${col}`;
             const icon = SKILLS[row][col];
-            if (!icon) continue;
             // Phase staggered by grid position so highlighted keys look like a
             // travelling wave rather than a synchronised pulse. Constants tuned
             // by eye — any non-degenerate combo works, just avoid exact multiples
