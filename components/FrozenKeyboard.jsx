@@ -205,6 +205,25 @@ function makeIconTexture(svgPath, color, size = 256) {
     tex.needsUpdate = true;
     return tex;
 }
+function makeImageTexture(src) {
+    const texture = new THREE.Texture();
+    texture.colorSpace = THREE.SRGBColorSpace;
+    const image = new Image();
+    image.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 256;
+        canvas.height = 256;
+        const ctx = canvas.getContext("2d");
+        const scale = Math.min(canvas.width / image.width, canvas.height / image.height);
+        const width = image.width * scale;
+        const height = image.height * scale;
+        ctx.drawImage(image, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
+        texture.image = canvas;
+        texture.needsUpdate = true;
+    };
+    image.src = src;
+    return texture;
+}
 const SKILLS = SKILLS_GRID;
 const COLS = 5;
 const ROWS = 3;
@@ -325,7 +344,7 @@ function Keycap({ geometry, position, isMobile, icon, onHoverChange, hovered, hi
         phase: Math.random() * Math.PI * 2,
         threshold: 0.45 + Math.random() * 0.2, // 0.45..0.65 — higher = rarer pop
     }), []);
-    const iconTexture = useMemo(() => makeIconTexture(icon.path, `#${icon.hex}`), [icon.path, icon.hex]);
+    const iconTexture = useMemo(() => icon.image ? makeImageTexture(icon.image) : makeIconTexture(icon.path, `#${icon.hex}`), [icon.image, icon.path, icon.hex]);
     // Stable THREE.Color objects so useFrame can lerp in place (no garbage
     // per-tick). Recomputed whenever the season accent changes.
     const whiteColor = useMemo(() => new THREE.Color("#ffffff"), []);
