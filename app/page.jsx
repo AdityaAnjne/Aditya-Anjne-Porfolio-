@@ -10,7 +10,7 @@ import SeasonPicker from "@/components/SeasonPicker";
 import ProjectModal from "@/components/ProjectModal";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useIsMobile } from "@/lib/useIsMobile";
-import { SKILLS_FLAT } from "@/lib/skills";
+import { SKILL_GROUPS } from "@/lib/skills";
 const EMAIL = "adityaanjne2004@gmail.com";
 const GITHUB = "https://github.com/AdityaAnjne";
 const LINKEDIN = "https://linkedin.com/in/aditya-anjne-43802b304";
@@ -113,8 +113,11 @@ export default function Home() {
             <div className="relative md:h-[90vh]"><div className="md:sticky md:top-28 text-center">
               <Reveal><h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">{t("stack.title")}</h2></Reveal>
               <Reveal delay={120}><p className="mt-3 text-sm sm:text-base text-ice-300">{isMobile ? t("stack.hintMobile") : t("stack.hint")}</p></Reveal>
-              {isMobile && <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto pointer-events-auto">
-                {SKILLS_FLAT.map((s) => <div key={s.slug} className="flex items-start gap-3 rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4 text-left"><svg viewBox="0 0 24 24" width="22" height="22" fill={`#${s.hex}`} className="flex-none mt-0.5" aria-hidden><path d={s.path}/></svg><div><p className="text-ice-50 font-medium text-sm">{s.title}</p><p className="text-ice-400 text-xs mt-0.5 leading-snug">{t(`keyboard.taglines.${s.slug}`)}</p></div></div>)}
+              {isMobile && <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto pointer-events-auto text-left">
+                {SKILL_GROUPS.map((group) => <div key={group.title} className="rounded-xl bg-ink-1/70 backdrop-blur-sm border border-ink-3 p-4">
+                  <h3 className="text-ice-50 font-semibold text-sm mb-3">{group.title}</h3>
+                  <div className="flex flex-wrap gap-2">{group.skills.map((s) => <span key={s.slug} className="inline-flex items-center gap-1.5 rounded-full border border-ink-3 px-2.5 py-1.5 text-ice-200 text-xs"><svg viewBox="0 0 24 24" width="14" height="14" fill={`#${s.hex}`} aria-hidden><path d={s.path}/></svg>{s.title}</span>)}</div>
+                </div>)}
               </div>}
             </div></div>
           </section>
